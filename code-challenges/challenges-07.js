@@ -21,8 +21,7 @@
 //  2- The first letters of the firstName and lastName should be capital letter
 
 const objLat = (obj) => {
-    document.write(`my name is ${obj.firstName} ${obj.lastName} I am ${obj.age} YO, and I love ${obj.hobby}.`);
-    document.write(`my name is ${obj.firstName} ${obj.lastName} I am ${obj.age} YO, and I love ${obj.hobby}`);
+
 };
 // -------------------------------------------------------------------------------------------------------
 

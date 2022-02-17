@@ -24,14 +24,7 @@
 // }
 //
 // Output:
-// ["Customer Name :"+Romio Joliat+" , Age :"35", "Customer Name :Mario Ristrova , Age :39", ... ]
 
-const customerAndAge = (obj) => {
-  for (const [key, value] of Object.entries(recipeInfo))  {
-    cos.push(`Customer Name:${key},Age: ${value}`);
-  
-      }
-  return cos;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -56,13 +49,7 @@ const customerAndAge = (obj) => {
 // Note:
 // You can solve this challenge by using Object.entries
 
-const getEntries = (obj) => {
-  
-  for (const [key, value] of Object.entries(recipeInfo)) {
-    s.push(`${key}: ${value}`);
-  
-      }
-  return s;
+
 };
 // -------------------------------------------------------------------------------------------------------
 
