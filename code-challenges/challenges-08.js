@@ -24,10 +24,7 @@
 // }
 //
 // Output:
-// ["Customer Name :Romio Joliat , Age :35", "Customer Name :Mario Ristrova , Age :39", ... ]
 
-const customerAndAge = (obj) => {
-  // write your code here
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -52,8 +49,7 @@ const customerAndAge = (obj) => {
 // Note:
 // You can solve this challenge by using Object.entries
 
-const getEntries = (obj) => {
-  // write your code here
+
 };
 // -------------------------------------------------------------------------------------------------------
 

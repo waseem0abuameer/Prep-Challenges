@@ -22,7 +22,6 @@
 
 const objLat = (obj) => {
 
-   return("my name is "+obj.firstName.chartAt(0).toUpperCase()+obj.firstName.slice(1)+" "+obj.lastName.chartAt(0).toUpperCase()+obj.lastName.slice(1)+" " +"I am"+obj.age +"YO, and I love"+obj.hobby +".");
 };
 // -------------------------------------------------------------------------------------------------------
 
