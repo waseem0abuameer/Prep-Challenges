@@ -61,39 +61,46 @@
 // first one is containing the names of all of the courses in the data set.
 // second one is containing the names of all the students
 
-const courses = [
-  {
-    course: 'Java',
-    Instructor: 'David',
-    Students: ['Lincoln', 'Ruth', 'Briana', 'Suzy', 'Greta'],
-    GroupName: 'Stars',
-  },
-  {
-    course: 'JavaScript',
-    Instructor: 'Van',
-    Students: ['Alphonso', 'Daley', 'Dax', 'Karter', 'Jorja'],
-    GroupName: 'Nerd-ware',
-  },
-  {
-    course: 'Python',
-    Instructor: 'Delaney',
-    Students: ['Barney', 'Kalé', 'Alisha'],
-    GroupName: 'Whats-Up',
-  },
-  {
-    course: 'DotNet',
-    Instructor: 'Keanna',
-    Students: ['Oli', 'Gisselle', 'Pru'],
-    GroupName: 'Lol',
-  },
+const courses = [{
+        course: 'Java',
+        Instructor: 'David',
+        Students: ['Lincoln', 'Ruth', 'Briana', 'Suzy', 'Greta'],
+        GroupName: 'Stars',
+    },
+    {
+        course: 'JavaScript',
+        Instructor: 'Van',
+        Students: ['Alphonso', 'Daley', 'Dax', 'Karter', 'Jorja'],
+        GroupName: 'Nerd-ware',
+    },
+    {
+        course: 'Python',
+        Instructor: 'Delaney',
+        Students: ['Barney', 'Kalé', 'Alisha'],
+        GroupName: 'Whats-Up',
+    },
+    {
+        course: 'DotNet',
+        Instructor: 'Keanna',
+        Students: ['Oli', 'Gisselle', 'Pru'],
+        GroupName: 'Lol',
+    },
 ];
 
 const getInfo = (arr) => {
-  let coursesName = [];
-  let studentsName = [];
-  // write your code here
 
-  return { coursesName, studentsName };
+    let coursesName = [];
+    let studentsName = [];
+
+    for (let i of arr) {
+
+        coursesName.push(i.course);
+
+        for (let j of i.Students) {
+            studentsName.push(j);
+        }
+    }
+    return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -115,14 +122,37 @@ const getInfo = (arr) => {
 // ]
 
 const getStudents = (arr) => {
-  // write your code here
+
+    let objectArr = []
+
+    for (let i of arr) {
+
+        for (let j of courses) {
+
+            for (let z of j.Students) {
+
+                if (z == i) {
+
+                    let newObject = {
+                        Student: z,
+                        course: j.course,
+                    }
+
+                    objectArr.push(newObject);
+                    break;
+
+                }
+            }
+        }
+    }
+    return objectArr;
 };
 //  ------------------------------------------------------------------------------------------------------
 
 module.exports = {
-  customerAndAge,
-  getEntries,
-  courses,
-  getInfo,
-  getStudents,
+    customerAndAge,
+    getEntries,
+    courses,
+    getInfo,
+    getStudents,
 };
