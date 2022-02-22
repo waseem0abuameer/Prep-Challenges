@@ -20,11 +20,11 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-
+const objLat = (obj) => {
+    const newfirstName = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
+    const newlastName = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    return (`my name is ${newfirstName + " " + newlastName} I am ${obj.age} YO, and I love ${obj.hobby}.`)
 };
-// -------------------------------------------------------------------------------------------------------
-
-// -------------------------------------------------------------------------------------------------------
 //  Challenge 2:
 //  Required:
 //
@@ -85,6 +85,38 @@
 
 const cvFormatter = (arr) => {
 
+    var newArr =[];
+    for(let i=0; i<arr.length; i++){
+
+        if(arr[i].yearsOfExperience > 1){
+
+            if(arr[i].lastName == null){
+
+                let newCV={
+                    fullName : arr[i].firstName,
+                    tech : arr[i].tech,
+                }
+                  newArr.push(newCV);
+            }
+
+            else if(arr[i].firstName==null){
+                let newCV={
+                    fullName : arr[i].lastName,
+                    tech : arr[i].tech,
+                }
+                  newArr.push(newCV);
+            }
+
+            else{
+                let newCV={
+                    fullName : (arr[i].firstName + " " + arr[i].lastName),
+                    tech : arr[i].tech,
+                }
+                  newArr.push(newCV);
+            }
+        }
+    }
+    return newArr;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -110,7 +142,43 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-    // write your code here
+
+    let rejectedCVs=0;
+    let jsCounter=0;
+    let pythonCounter=0;
+    let dotNetCounter=0;
+    let javaCounter=0;
+    
+    for(let i=0;i<arr.length;i++){
+
+        if(arr[i].tech == "Python" ){
+            pythonCounter++;
+        }
+
+        else if(arr[i].tech == "JS" ){
+            jsCounter++;
+        }
+
+        else if(arr[i].tech == ".Net" ){
+            dotNetCounter++;
+        }
+
+        else if(arr[i].tech == "Java" ){
+            javaCounter++;
+        }
+
+        if(arr[i].yearsOfExperience<=1){
+            rejectedCVs++;
+        }
+    }
+    return {
+        python_Devs: pythonCounter,
+        javaScript_Devs: jsCounter,
+        dotNet_Devs: dotNetCounter,
+        java_Devs: javaCounter,
+        totalApplicants: pythonCounter + jsCounter + dotNetCounter + javaCounter,
+        rejectedApplicants:rejectedCVs,
+    }
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -127,7 +195,12 @@ const applicationsStatics = (arr) => {
 let data = {
     SchoolName: "David Academy",
     Capacity: 1000,
-
+    grades: [
+        {
+            grade: "First",
+            numberOFClasses: 3,
+            classes: [
+                {
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -153,7 +226,8 @@ let data = {
         {
             grade: "Second",
             numberOFClasses: 2,
-
+            classes: [
+                {
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -172,7 +246,8 @@ let data = {
         {
             grade: "Third",
             numberOFClasses: 2,
-
+            classes: [
+                {
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -191,7 +266,8 @@ let data = {
         {
             grade: "Forth",
             numberOFClasses: 4,
-
+            classes: [
+                {
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -229,8 +305,23 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    // write your code here
+
+    for(let i=0; i<data.grades.length; i++){
+
+        for(let j=0;j<data.grades[i].classes.length;j++){
+
+            let classScoreSum=0;
+
+                for(let n=0;n<data.grades[i].classes[j].classScores.length;n++){
+
+                    classScoreSum += data.grades[i].classes[j].classScores[n];
+                }
+
+            data.grades[i].classes[j].avg=Math.floor(classScoreSum / data.grades[i].classes[j].classScores.length);
+        }
+    }
+    return data;
 };
 // -------------------------------------------------------------------------------------------------------
 
-
+module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
