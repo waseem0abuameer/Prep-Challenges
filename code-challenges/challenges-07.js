@@ -20,7 +20,6 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-const objLat = (obj) => {
 
 };
 // -------------------------------------------------------------------------------------------------------
@@ -85,7 +84,7 @@ const objLat = (obj) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvFormatter = (arr) => {
-    // write your code here
+
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -128,12 +127,7 @@ const applicationsStatics = (arr) => {
 let data = {
     SchoolName: "David Academy",
     Capacity: 1000,
-    grades: [
-        {
-            grade: "First",
-            numberOFClasses: 3,
-            classes: [
-                {
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -159,8 +153,7 @@ let data = {
         {
             grade: "Second",
             numberOFClasses: 2,
-            classes: [
-                {
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -179,8 +172,7 @@ let data = {
         {
             grade: "Third",
             numberOFClasses: 2,
-            classes: [
-                {
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -199,8 +191,7 @@ let data = {
         {
             grade: "Forth",
             numberOFClasses: 4,
-            classes: [
-                {
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -242,4 +233,4 @@ const classesAvg = (data) => {
 };
 // -------------------------------------------------------------------------------------------------------
 
-module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
+
