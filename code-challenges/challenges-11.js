@@ -17,11 +17,7 @@
 // 
 
 function square(arr) {
-    for(var i=0;i<arr.length;i++)
-    {
-        arr[i]=arr[i]*arr[i];
-    }
-    return arr;
+    return (arr.map((num) => Math.pow(num, 2)));
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -60,9 +56,7 @@ function square(arr) {
 // Output: ['Adam Anderson', 'Ben Zeller', 'Peter Mccord', 'Fred Sagar', 'Nathan Weiss']
 
 function fullName(arr) {
-    fullAuthorNames = arr
-    .map(arr => `${arr.firstName} ${arr.lastName}`);
-    return fullAuthorNames;
+    return (arr.map(Key => Key.firstName + " " + Key.lastName));
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -129,6 +123,13 @@ function fullName(arr) {
 
 function gradesAvg(arr) {
     // write your code here
+    arr.map((element) => {
+        let sum = 0;
+        let len = element.gradsList.length;
+        element.gradsList.forEach(element => { sum += element });
+        element.avg = sum / len;
+    })
+    return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
