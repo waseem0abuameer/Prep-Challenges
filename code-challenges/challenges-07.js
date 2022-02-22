@@ -20,10 +20,7 @@
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
 
-const objLat = (obj) => {
-    const newfirstName = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
-    const newlastName = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
-    return (`my name is ${newfirstName + " " + newlastName} I am ${obj.age} YO, and I love ${obj.hobby}.`)
+
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -88,34 +85,6 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
 
-    var newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-
-        if (arr[i].yearsOfExperience > 1) {
-
-            if (arr[i].lastName == null) {
-
-                let newCV = {
-                    fullName: arr[i].firstName,
-                    tech: arr[i].tech,
-                }
-                newArr.push(newCV);
-            } else if (arr[i].firstName == null) {
-                let newCV = {
-                    fullName: arr[i].lastName,
-                    tech: arr[i].tech,
-                }
-                newArr.push(newCV);
-            } else {
-                let newCV = {
-                    fullName: (arr[i].firstName + " " + arr[i].lastName),
-                    tech: arr[i].tech,
-                }
-                newArr.push(newCV);
-            }
-        }
-    }
-    return newArr;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -158,10 +127,7 @@ const applicationsStatics = (arr) => {
 let data = {
     SchoolName: "David Academy",
     Capacity: 1000,
-    grades: [{
-            grade: "First",
-            numberOFClasses: 3,
-            classes: [{
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -187,7 +153,7 @@ let data = {
         {
             grade: "Second",
             numberOFClasses: 2,
-            classes: [{
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -206,7 +172,7 @@ let data = {
         {
             grade: "Third",
             numberOFClasses: 2,
-            classes: [{
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -225,7 +191,7 @@ let data = {
         {
             grade: "Forth",
             numberOFClasses: 4,
-            classes: [{
+
                     avg: 0,
                     classNumber: "01",
                     classScores: [
@@ -267,4 +233,4 @@ const classesAvg = (data) => {
 };
 // -------------------------------------------------------------------------------------------------------
 
-module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
+
