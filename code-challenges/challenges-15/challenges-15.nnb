@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function equalizeArray(arr) {\n    let arro = {};\n let count = 0;\nfor (let num of arr) {\n    arro[num] = arro[num] + 1 || 1;\n }\nfor (let value in arro) {\n   if (arro[value] > count) {\n    count = arro[value];\n   }\n }\nreturn (arr.length - count);\n\n}"
             ],
             "outputs": []
         },
