@@ -21,9 +21,9 @@
 //  2- The first letters of the firstName and lastName should be capital letter
 
 const objLat = (obj) => {
-    const newfirstName = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
-    const newlastName = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
-    return (`my name is ${newfirstName + " " + newlastName} I am ${obj.age} YO, and I love ${obj.hobby}.`)
+    const fName = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
+    const lName = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    return (`my name is ${fName + " " + lName} I am ${obj.age} YO, and I love ${obj.hobby}.`)
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -88,34 +88,34 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
 
-    var newArr = [];
+    var arr1 = [];
     for (let i = 0; i < arr.length; i++) {
 
         if (arr[i].yearsOfExperience > 1) {
 
             if (arr[i].lastName == null) {
 
-                let newCV = {
+                let Reco = {
                     fullName: arr[i].firstName,
                     tech: arr[i].tech,
                 }
-                newArr.push(newCV);
+                arr1.push(Reco);
             } else if (arr[i].firstName == null) {
-                let newCV = {
+                let Reco1 = {
                     fullName: arr[i].lastName,
                     tech: arr[i].tech,
                 }
-                newArr.push(newCV);
+                arr1.push(Reco1);
             } else {
-                let newCV = {
+                let Reco2 = {
                     fullName: (arr[i].firstName + " " + arr[i].lastName),
                     tech: arr[i].tech,
                 }
-                newArr.push(newCV);
+                arr1.push(Reco2);
             }
         }
     }
-    return newArr;
+    return arr1;
 };
 // -------------------------------------------------------------------------------------------------------
 
